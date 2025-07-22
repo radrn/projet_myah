@@ -1,0 +1,23 @@
+{
+  "name": "myah",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/radrn/projet_myah.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/radrn/projet_myah/issues"
+  },
+  "homepage": "https://github.com/radrn/projet_myah#readme",
+  "description": ""
+}

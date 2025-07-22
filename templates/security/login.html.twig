@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+    <form method="post">
+        {% if error %}
+            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+        {% endif %}
+
+        <div class="form">
+            <div class="titre">
+                <h1>Welcome back !</h1>
+            </div>
+            <div class="flex">
+                <div class="image-section">
+                    <img src="{{ asset('Seowon.png') }}" alt="Myah logo">
+                </div>
+            </div>
+            <div class="form-section">
+                <label for="inputEmail" class="">Email</label>
+                <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control"
+                       autocomplete="email" required autofocus>
+                <label for="inputPassword">Mot de passe</label>
+                <input type="password" name="password" id="inputPassword" class="form-control"
+                       autocomplete="current-password" required>
+                <input type="hidden" name="_csrf_token" data-controller="csrf-protection"
+                       value="{{ csrf_token('authenticate') }}">
+                <div class="btn-submit">
+                    <button class="btn btn-lg btn-primary" type="submit">
+                        Se connecter
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
