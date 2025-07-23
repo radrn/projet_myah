@@ -13,7 +13,12 @@
     {% endblock %}
 </head>
 <body>
-{% block body %}
-{% endblock %}
+<div class="app-container">
+    {% block header %}
+        {% include 'partials/header.html.twig' %}
+    {% endblock %}
+    {% block body %}
+    {% endblock %}
+</div>
 </body>
 </html>

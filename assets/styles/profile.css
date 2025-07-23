@@ -1,0 +1,62 @@
+body {
+    background-color: #FAF9F6;
+}
+
+.feed-container {
+    flex-direction: column;
+}
+
+.profile-nav {
+    display: flex;
+    justify-content: space-evenly;
+    font-family: "Nova Round";
+    font-size: 25px;
+    color: #A2AA7D;
+    border-bottom: 3px solid #6c757d;
+    margin-bottom: 25px;
+}
+
+.card {
+    width: 50%;
+}
+
+.card .post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #A3C8D9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    max-height: 20px;
+    margin: 0;
+    padding: 15px;
+    color: #6c757d;
+}
+
+.card .post-contenu {
+    background-color: rgb(163, 200, 217, 0.4);
+    margin: 0;
+    padding: 15px;
+}
+
+.card .post-footer {
+    background-color: rgb(163, 200, 217, 0.4);
+    margin: 0;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.post-img {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+.profile-picture {
+    width: 150px;
+    border-radius: 100%;
+    border: 3px solid #a2aa7d;
+}

@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Inscription{% endblock %}
+{% block header %}
+    
+{% endblock %}
 
 {% block body %}
     <div class="card-form">
@@ -25,7 +28,7 @@
 
                 {{ form_row(formRegister.password) }}
 
-                <div class="btn-register">
+                <div class="btn-submit">
                     {{ form_row(formRegister.submit) }}
                 </div>
 
