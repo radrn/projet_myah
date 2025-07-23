@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Repository\PostRepository;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
@@ -20,7 +19,7 @@ final class ProfileController extends AbstractController
         if (!$user) {
             throw $this->createNotFoundException("Utilisateur non trouvé.");
         }
-
+    
         $posts = $postRepository->findBy(['user' => $user]);
 
         return $this->render('profile/index.html.twig', [

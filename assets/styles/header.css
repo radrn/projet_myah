@@ -8,7 +8,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 350px;
+    gap: 320px;
     border-right: 3px solid #ccc;
 }
 
@@ -32,7 +32,7 @@
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     color: #a2aa7d;
     text-decoration: none;
     font-weight: 500;
@@ -42,8 +42,8 @@
 }
 
 .nav-item svg {
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     /*#a2aa7d;*/
 }
 
@@ -88,8 +88,8 @@
 }
 
 .user-info img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -100,7 +100,7 @@
 }
 
 .username {
-    font-size: 12px;
+    font-size: 15px;
     font-weight: bold;
     color: #444;
 }
@@ -115,9 +115,11 @@
     color: white;
     font-weight: 600;
     border: none;
-    padding: 6px 50px;
+    padding: 8px 60px;
     border-radius: 15px;
     cursor: pointer;
+    font-family: "Nova Round";
+    font-size: 15px;
 }
 
 .logout-button:hover {

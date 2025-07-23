@@ -81,6 +81,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(targetEntity: Subscribe::class, mappedBy: 'followed')]
     private Collection $subscribeFolloweds;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $bio = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $header = null;
+
+    #[ORM\Column(length: 50, nullable: true)]
+    private ?string $profilName = null;
+
     public function __construct()
     {
         $this->posts = new ArrayCollection();
@@ -396,6 +405,42 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
                 $subscribeFollowed->setFollowed(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBio(): ?string
+    {
+        return $this->bio;
+    }
+
+    public function setBio(?string $bio): static
+    {
+        $this->bio = $bio;
+
+        return $this;
+    }
+
+    public function getHeader(): ?string
+    {
+        return $this->header;
+    }
+
+    public function setHeader(?string $header): static
+    {
+        $this->header = $header;
+
+        return $this;
+    }
+
+    public function getProfilName(): ?string
+    {
+        return $this->profilName;
+    }
+
+    public function setProfilName(?string $profilName): static
+    {
+        $this->profilName = $profilName;
 
         return $this;
     }

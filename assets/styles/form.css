@@ -82,3 +82,14 @@ body {
 .flex {
     display: flex;
 }
+
+.create-acc {
+    margin-top: 10px;
+}
+
+.create-acc a {
+    text-decoration: none;
+    color: #768249;
+    font-family: "Nova Round";
+    font-size: 12px;
+}

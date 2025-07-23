@@ -39,16 +39,17 @@
             </div>
         </nav>
     </div>
-
-    <div class="logout">
-        <div class="user-info">
-            <img src="{{ asset(user.avatarPath) }}" alt="{{ user.username }}">
-            <div class="user">
-                <p class="username">@{{ user.username }}</p>
+    {% if app.user.username is defined %}
+        <div class="logout">
+            <div class="user-info">
+                <img src="{{ asset(user.avatarPath) }}" alt="{{ user.username }}">
+                <div class="user">
+                    <p class="username">@{{ user.username }}</p>
+                </div>
             </div>
+            <form action="{{ path('app_logout') }}" method="post">
+                <button type="submit" class="logout-button">Log Out</button>
+            </form>
         </div>
-        <form action="{{ path('app_logout') }}" method="post">
-            <button type="submit" class="logout-button">Log Out</button>
-        </form>
-    </div>
+    {% endif %}
 </div>

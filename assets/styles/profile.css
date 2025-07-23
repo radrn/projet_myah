@@ -2,8 +2,8 @@ body {
     background-color: #FAF9F6;
 }
 
-.feed-container {
-    flex-direction: column;
+.userInfo {
+    margin-left: 15px;
 }
 
 .profile-nav {
@@ -16,8 +16,14 @@ body {
     margin-bottom: 25px;
 }
 
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card {
-    width: 50%;
+    width: 75%;
 }
 
 .card .post-header {
@@ -49,7 +55,7 @@ body {
     border-bottom-right-radius: 15px;
 }
 
-.post-img {
+.user-pp {
     width: 25px;
     height: 25px;
     border-radius: 100%;
@@ -59,4 +65,48 @@ body {
     width: 150px;
     border-radius: 100%;
     border: 3px solid #a2aa7d;
+}
+
+.post-img {
+    width: 50%;
+}
+
+.profile-nav {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 50px;
+    font-family: "Nova Round";
+    font-size: 25px;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #A2AA7D;
+}
+
+.profile-nav button {
+    background: none;
+    border: none;
+    color: #A2AA7D;
+    cursor: pointer;
+    padding-bottom: 10px;
+    font-family: inherit;
+    font-size: inherit;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.profile-nav button:hover {
+    color: #82669e;
+}
+
+.profile-nav button.active {
+    color: #82669e;
+}
+
+.profile-nav button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    border-radius: 2px;
 }
