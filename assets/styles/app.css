@@ -1,10 +1,12 @@
 body {
     background-color: skyblue;
+    margin: 0;
 }
 
 .app-container {
     display: flex;
-    align-items: center;
     justify-content: center;
     min-height: 100vh;
+    max-width: 1000px;
+    margin: auto;
 }

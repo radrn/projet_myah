@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\PostLike;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\Validator\Constraints\Country;
 
 /**
  * @extends ServiceEntityRepository<PostLike>
@@ -16,6 +17,11 @@ class PostLikeRepository extends ServiceEntityRepository
         parent::__construct($registry, PostLike::class);
     }
 
+//    public function likeCount(){
+//        $qb= $this->createQueryBuilder('likes')
+//            ->select()
+//        return $qb->getQuery()->getResult();
+//    }
     //    /**
     //     * @return Subscribe[] Returns an array of Subscribe objects
     //     */

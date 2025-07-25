@@ -2,38 +2,37 @@
 
 namespace App\Controller;
 
-use App\Factory\CommentFactory;
-use App\Repository\CommentRepository;
 use App\Repository\PostLikeRepository;
 use App\Repository\PostRepository;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class ProfileController extends AbstractController
+final class UsersController extends AbstractController
 {
-    #[Route('/profile', name: 'app_profile')]
+    #[Route('/profile/{username}', name: 'app_users')]
     public function show(
+        UserRepository     $userRepository,
         PostRepository     $postRepository,
         PostLikeRepository $likeRepository,
-        CommentRepository  $commentRepository
+
     ): Response
     {
         $user = $this->getUser();
+        
+        $users = $userRepository->findBy(['username']);
 
         if (!$user) {
             throw $this->createNotFoundException("Utilisateur non trouvé.");
         }
+        $posts = $postRepository->findBy(['user' => $users], ['createdAt' => 'DESC']);
+        $likes = $likeRepository->findBy(['user' => $users], ['createdAt' => 'DESC']);
 
-        $posts = $postRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
-        $likes = $likeRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
-        $comments = $commentRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
-        return $this->render('profile/profile.html.twig', [
-            'user' => $user,
+        return $this->render('users/users.html.twig', [
+            'users' => $users,
             'posts' => $posts,
             'likes' => $likes,
-            'comments' => $comments
         ]);
     }
-
 }

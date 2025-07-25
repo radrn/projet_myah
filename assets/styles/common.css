@@ -1,0 +1,83 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card {
+    width: 75%;
+}
+
+.card .post-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #A3C8D9;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    overflow: hidden;
+    max-height: 20px;
+    margin: 0;
+    padding: 15px;
+    color: #6c757d;
+}
+
+.post-header a:link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.post-header a:visited {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.post-header a:active {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.user-pp {
+    width: 25px;
+    height: 25px;
+    border-radius: 100%;
+}
+
+.card .post-contenu {
+    background-color: rgb(163, 200, 217, 0.4);
+    margin: 0;
+    padding-bottom: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+
+.post-img {
+    width: 50%;
+}
+
+.card .post-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(163, 200, 217, 0.4);
+    margin: 0;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.card .post-footer p {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.card .post-footer svg {
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+}
