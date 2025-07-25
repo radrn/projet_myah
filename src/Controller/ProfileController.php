@@ -28,11 +28,15 @@ final class ProfileController extends AbstractController
         $posts = $postRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
         $likes = $likeRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
         $comments = $commentRepository->findBy(['user' => $user], ['createdAt' => 'DESC']);
+        $followersCount = $user->getSubscribeFolloweds()->count();
+        $followingCount = $user->getSubscribes()->count();
         return $this->render('profile/profile.html.twig', [
             'user' => $user,
             'posts' => $posts,
             'likes' => $likes,
-            'comments' => $comments
+            'comments' => $comments,
+            'followersCount' => $followersCount,
+            'followingCount' => $followingCount,
         ]);
     }
 

@@ -15,14 +15,7 @@ class AddPostType extends AbstractType
     {
         $builder
             ->add('contenu')
-            ->add('image')
-            ->add('createdAt')
-            ->add('editedAt')
-            ->add('user', EntityType::class, [
-                'class' => User::class,
-                'choice_label' => 'id',
-            ])
-        ;
+            ->add('image');
     }
 
     public function configureOptions(OptionsResolver $resolver): void

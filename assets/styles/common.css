@@ -81,3 +81,37 @@
     width: 15px;
     height: 15px;
 }
+
+.addPost {
+    border-bottom: 3px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.follow-stats {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: 15px;
+}
+
+strong {
+    font-weight: bolder;
+}
+
+.follow {
+    color: #444;
+}
+
+.postbtn {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.post-icon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #555;
+}
