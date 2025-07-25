@@ -6,33 +6,35 @@
 {% endblock %}
 
 {% block body %}
-    <div class="card-form">
-        <div class="titre">
-            <h1>Nice to meet you !</h1>
-        </div>
-        <div class="flex">
-            <div class="image-section">
-                <img src="{{ asset('Seowon.png') }}" alt="Myah logo">
+    <div class="fullscreen-center">
+        <div class="card-form">
+            <div class="titre">
+                <h1>Nice to meet you !</h1>
             </div>
-            <div class="form-section">
-
-                {{ form_start(formRegister) }}
-
-                {{ form_row(formRegister.lastName) }}
-
-                {{ form_row(formRegister.firstName) }}
-
-                {{ form_row(formRegister.email) }}
-
-                {{ form_row(formRegister.username) }}
-
-                {{ form_row(formRegister.password) }}
-
-                <div class="btn-submit">
-                    {{ form_row(formRegister.submit) }}
+            <div class="flex">
+                <div class="image-section">
+                    <img src="{{ asset('Seowon.png') }}" alt="Myah logo">
                 </div>
-                {{ form_end(formRegister) }}
+                <div class="form-section">
+
+                    {{ form_start(formRegister) }}
+
+                    {{ form_row(formRegister.lastName) }}
+
+                    {{ form_row(formRegister.firstName) }}
+
+                    {{ form_row(formRegister.email) }}
+
+                    {{ form_row(formRegister.username) }}
+
+                    {{ form_row(formRegister.password) }}
+
+                    <div class="btn-submit">
+                        {{ form_row(formRegister.submit) }}
+                    </div>
+                    {{ form_end(formRegister) }}
+                </div>
             </div>
-        </div>
-    </div
+        </div
+    </div>
 {% endblock %}
