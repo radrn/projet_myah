@@ -14,7 +14,7 @@
                     {% for comment in comments %}
                         <div class="comment-card">
                             <div class="comment-header">
-                                <a href="{{ path('app_users', {'username': comment.user.username}) }}">
+                                <a href="{{ path('app_profile', {'username': comment.user.username}) }}">
                                     <img src="{{ comment.user.avatarPath }}" class="user-pp"
                                          alt="Photo de {{ comment.user.username }}">
                                     <p>@{{ comment.user.username }}</p>

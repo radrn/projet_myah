@@ -1,6 +1,6 @@
 <div class="card">
     <div class="post-header">
-        <a href="{{ path('app_users', {'username': like.post.user.username}) }}">
+        <a href="{{ path('app_profile', {'username': like.post.user.username}) }}">
             <img src="{{ like.post.user.avatarPath }}"
                  class="user-pp">
             <p>@{{ like.post.user.username }}</p>
@@ -8,8 +8,12 @@
     </div>
 
     <div class="post-contenu">
-        <p>{{ like.post.contenu }}</p>
-        <img src="{{ like.post.image }}" class="post-img">
+        <a href="{{ path('app_post', {'username': like.post.user.username, 'id': like.post.id}) }}">
+            <p>{{ like.post.contenu }}</p>
+            {% if like.post.image %}
+                <img src="{{ like.post.image }}" class="post-img">
+            {% endif %}
+        </a>
     </div>
 
     <div class="post-footer">

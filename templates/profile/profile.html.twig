@@ -16,7 +16,13 @@
                 </div>
 
                 <div class="edit-profile">
-                    <button class="edit-btn">Éditer le profil</button>
+                    <button class="edit-btn">
+                        {% if app.user == user %}
+                            Éditer le profil
+                        {% else %}
+                            Suivre
+                        {% endif %}
+                    </button>
                 </div>
             </div>
 

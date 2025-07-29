@@ -43,10 +43,10 @@
         <div class="logout">
             <div class="user-info">
                 <a href="{{ path('app_profile') }}">
-                    <img src="{{ asset(user.avatarPath) }}" alt="{{ user.username }}">
+                    <img src="{{ asset(app.user.avatarPath) }}" alt="{{ app.user.username }}">
                     <div class="user">
-                        <p class="username">{{ user.profilName }}</p>
-                        <p class="username">@{{ user.username }}</p>
+                        <p class="username">{{ app.user.profilName }}</p>
+                        <p class="username">@{{ app.user.username }}</p>
                     </div>
                 </a>
             </div>

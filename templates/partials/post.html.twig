@@ -1,16 +1,18 @@
 <div class="card">
     <div class="post-header">
-        <a href="{{ path('app_users', {'username': post.user.username}) }}">
+        <a href="{{ path('app_profile', {'username': post.user.username}) }}">
             <img src="{{ post.user.avatarPath }}" class="user-pp">
             <p>@{{ post.user.username }}</p>
         </a>
     </div>
 
     <div class="post-contenu">
-        <p>{{ post.contenu }}</p>
-        {% if post.image %}
-            <img src="{{ post.image }}" class="post-img">
-        {% endif %}
+        <a href="{{ path('app_post', {'username': post.user.username, 'id': post.id}) }}">
+            <p>{{ post.contenu }}</p>
+            {% if post.image %}
+                <img src="{{ post.image }}" class="post-img">
+            {% endif %}
+        </a>
     </div>
 
     <div class="post-footer">
