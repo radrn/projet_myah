@@ -1,3 +1,14 @@
+body {
+    background-color: #FAF9F6;
+}
+
+.feed-container {
+    border-right: 3px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .card-container {
     display: flex;
     flex-direction: column;
@@ -6,6 +17,7 @@
 
 .card {
     width: 75%;
+    cursor: pointer;
 }
 
 .card .post-header {
@@ -23,9 +35,9 @@
 }
 
 .post-header a:link {
+    gap: 15px;
     display: flex;
     align-items: center;
-    gap: 15px;
     text-decoration: none;
     color: #6c757d;
 }
@@ -115,3 +127,73 @@ strong {
     font-size: 14px;
     color: #555;
 }
+
+.comments-section {
+    background-color: rgb(163, 200, 217, 0.4);
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.comment-card {
+    width: 100%;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.comment-header a:link {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.comment-header a:visited {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.comment-header a:active {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.comment-header p {
+    font-weight: bold;
+    font-size: 14px;
+    margin: 0;
+}
+
+.comment-contenu {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.comment-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #777;
+    padding-top: 5px;
+}
+
+.comment-footer p {
+    margin: 0;
+}
+
+
