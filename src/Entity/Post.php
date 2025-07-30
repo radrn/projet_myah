@@ -86,8 +86,6 @@ class Post
 
     public function setCreatedAt(\DateTime $createdAt): static
     {
-        $this->createdAt = $createdAt;
-
         return $this;
     }
 

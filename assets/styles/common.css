@@ -9,10 +9,33 @@ body {
     align-items: center;
 }
 
-.addPost {
-    width: 100%;
-    border-bottom: 3px solid #ccc;
+.card.post {
+    margin-top: 15px;
 }
+
+.content {
+    width: 100%;
+    font-size: 16px;
+    background-color: rgba(177, 209, 227, 0.4);
+    font-family: "Nova Round";
+    margin-bottom: 10px;
+}
+
+
+.post-btn {
+    background-color: #a2aa7d;
+    color: #FFFFFF;
+    padding: 5px 35px;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: "Nova Round";
+}
+
 
 .card-container {
     display: flex;
@@ -119,10 +142,6 @@ body {
     height: 15px;
 }
 
-.addPost {
-    border-bottom: 3px solid #ccc;
-    margin-bottom: 15px;
-}
 
 .follow-stats {
     display: flex;

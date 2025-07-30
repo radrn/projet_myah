@@ -4,9 +4,28 @@
 
 {% block body %}
     <div class="feed-container">
-        <div class="addPost">
-            <p>ici sera le formulaire</p>
+        <div class="card post">
+            {{ form_start(form) }}
+            <div class="post-header">
+                <a href="{{ path('app_profile', {'username': user.username}) }}">
+                    <img src="{{ app.user.avatarPath }}"
+                         class="user-pp">
+                    <p>@{{ app.user.username }}</p>
+                </a>
+            </div>
+
+            <div class="post-contenu">
+                {{ form_widget(form.contenu) }}
+            </div>
+
+            <div class="post-footer">
+                {{ form_widget(form.image) }}
+                {{ form_widget(form.submit) }}
+            </div>
+
+            {{ form_end(form) }}
         </div>
+
 
         <div id="postsContent" class="card-container">
             {% for post in posts %}
