@@ -142,10 +142,6 @@ body {
     height: 15px;
 }
 
-.likebtn.liked {
-    fill: #82669e;
-}
-
 .follow-stats {
     display: flex;
     flex-direction: row;

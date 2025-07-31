@@ -44,13 +44,14 @@
 
         <div id="postsContent" class="card-container">
             {% for post in posts %}
-                {% include 'partials/post.html.twig' %}
+                {% include 'partials/post.html.twig' with {'post': post} %}
             {% endfor %}
         </div>
 
         <div id="favorisContent" class="card-container" style="display: none">
             {% for like in likes %}
-                {% include 'partials/likedpost.html.twig' %}
+                {% include 'partials/post.html.twig' with {'post': like.post} %}
+                {#                {% include 'partials/likedpost.html.twig' %} #}
             {% endfor %}
         </div>
     </div>

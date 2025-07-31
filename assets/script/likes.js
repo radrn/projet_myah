@@ -7,8 +7,12 @@
 //fetch sur ta route du controller /toto/ + postId
 
 document.querySelectorAll('.likebtn').forEach(button => {
+
     button.addEventListener('click', function () {
         const postId = this.dataset.postId;
+        let span = document.querySelector('[data-span-post-id="' + postId + '"]');
+        console.log(span);
+
         const url = `/post_ajax/handleLike/` + postId;
         fetch(url)
             .then((response) => {
@@ -16,8 +20,14 @@ document.querySelectorAll('.likebtn').forEach(button => {
 
             })
             .then((data) => {
+                if (data.success) {
+                    if (data.liked) {
+                        postId.setAttribute('fill', '#8A2BE2');
+                    } else {
+                        postId.setAttribute('fill', '#A2AA7D');
+                    }
+                }
 
-                
             })
     })
 })
