@@ -18,7 +18,7 @@ class PostLikeRepository extends ServiceEntityRepository
     }
 
 //    public function likeCount(){
-//        $qb= $this->createQueryBuilder('likes')
+//        $qb= $this->createQueryBuilder('likes.js')
 //            ->select()
 //        return $qb->getQuery()->getResult();
 //    }

@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Post
 {
     #[ORM\Id]
@@ -79,6 +80,12 @@ class Post
         return $this;
     }
 
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
+    {
+        $this->createdAt = new \DateTime();
+    }
+
     public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
@@ -87,6 +94,12 @@ class Post
     public function setCreatedAt(\DateTime $createdAt): static
     {
         return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setEditedAtValue(): void
+    {
+        $this->editedAt = new \DateTime();
     }
 
     public function getEditedAt(): ?\DateTime

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Comment;
+use App\Form\AddCommentType;
 use App\Form\AddPostType;
 use App\Repository\CommentRepository;
 use App\Repository\PostRepository;
@@ -41,15 +42,17 @@ final class PostController extends AbstractController
         }
         $comment = $commentRepository->findBy(['post' => $post], ['createdAt' => 'DESC']);
 
-        $newComment = new Comment();
-        $form = $this->createForm(AddPostType::class, $post);
-        $form->handleRequest($request);
 
+        $newComment = new Comment();
+        $form = $this->createForm(AddCommentType::class, $newComment);
+        $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($post);
+            $newComment->setUser($this->getUser());
+            $newComment->setPost($post);
+            $entityManager->persist($newComment);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_post');
+            return $this->redirectToRoute('app_post', ['username' => $username, 'id' => $id]);
         }
 
         return $this->render('post/index.html.twig', [

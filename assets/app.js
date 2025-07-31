@@ -12,5 +12,6 @@ import './styles/common.css';
 import './styles/form.css';
 import './styles/profile.css';
 import './script/profile.js';
+import './script/likes.js';
 
 console.log('This log comes from assets/app.js - welcome to AssetMapper! 🎉');

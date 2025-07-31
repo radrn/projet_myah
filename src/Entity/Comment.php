@@ -9,6 +9,7 @@ use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CommentRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class Comment
 {
     #[ORM\Id]
@@ -61,6 +62,12 @@ class Comment
         return $this;
     }
 
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
+    {
+        $this->createdAt = new \DateTime();
+    }
+
     public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
@@ -71,6 +78,12 @@ class Comment
         $this->createdAt = $createdAt;
 
         return $this;
+    }
+
+    #[ORM\PrePersist]
+    public function setEditedAtValue(): void
+    {
+        $this->editedAt = new \DateTime();
     }
 
     public function getEditedAt(): ?\DateTime

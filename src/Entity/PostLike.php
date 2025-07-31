@@ -6,6 +6,7 @@ use App\Repository\PostLikeRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: PostLikeRepository::class)]
+#[ORM\HasLifecycleCallbacks]
 class PostLike
 {
     #[ORM\Id]
@@ -27,6 +28,12 @@ class PostLike
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
+    {
+        $this->createdAt = new \DateTime();
     }
 
     public function getCreatedAt(): ?\DateTime

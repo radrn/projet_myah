@@ -22,7 +22,7 @@ class AddCommentType extends AbstractType
                 'attr' => [
                     'placeholder' => "What do you think ?",
                     'class' => 'content',
-                    'rows' => 4
+                    'rows' => 2
                 ]
             ])
             ->add('submit', SubmitType::class, [

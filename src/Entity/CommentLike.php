@@ -29,6 +29,12 @@ class CommentLike
         return $this->id;
     }
 
+    #[ORM\PrePersist]
+    public function setCreatedAtValue(): void
+    {
+        $this->createdAt = new \DateTime();
+    }
+
     public function getCreatedAt(): ?\DateTime
     {
         return $this->createdAt;
