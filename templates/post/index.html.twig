@@ -5,7 +5,6 @@
 {% block body %}
     <div class="feed-container">
         {% include 'partials/post.html.twig' %}
-
         <h2>Commentaires ({{ comments|length }})</h2>
         <section class="comments-section">
             {{ form_start(comForm) }}

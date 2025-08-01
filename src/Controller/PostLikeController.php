@@ -7,7 +7,6 @@ use App\Repository\PostLikeRepository;
 use App\Repository\PostRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
@@ -30,6 +29,7 @@ final class PostLikeController extends AbstractController
         if (!$post) {
             return new Response('Post introuvable', Response::HTTP_NOT_FOUND);
         }
+
         $postLike = $postLikeRepository->findOneBy([
             'user' => $user,
             'post' => $post
@@ -47,9 +47,6 @@ final class PostLikeController extends AbstractController
             $entityManager->flush();
             $liked = true;
         }
-        return new JsonResponse([
-            'liked' => $liked,
-            'likeCount' => count($post->getPostLikes())
-        ]);
+        return new Response(json_encode(['liked' => $liked, 'count' => $post->getPostLikes()->count()]), Response::HTTP_OK);
     }
 }

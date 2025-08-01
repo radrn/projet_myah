@@ -32,7 +32,8 @@
             <div class="post-icon" style="margin-left: 15px;">
                 <span data-span-post-id="{{ post.id }}">{{ post.postLikes|length }}</span>
                 <svg xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 512 512" fill="#A2AA7D"
+                     viewBox="0 0 512 512"
+                     fill="{% if is_post_liked(user, post) %} #82669e {% else %} #A2AA7D {% endif %}"
                      class="likebtn" width="20" height="20"
                      data-post-id="{{ post.id }}" style="cursor: pointer;">
                     <path

@@ -16,11 +16,15 @@
                 </div>
 
                 <div class="edit-profile">
-                    <button class="edit-btn">
+                    <button class="edit-btn" data-user-id="{{ user.id }}">
                         {% if app.user == user %}
                             Éditer le profil
                         {% else %}
-                            Suivre
+                            {% if is_following(app.user, user) %}
+                                Abonné
+                            {% else %}
+                                Suivre
+                            {% endif %}
                         {% endif %}
                     </button>
                 </div>
@@ -31,8 +35,8 @@
                 <h4>@{{ user.username }}</h4>
                 <p>{{ user.bio }}</p>
                 <div class="follow-stats">
-                    <span class="follow"><strong>{{ followersCount }}</strong> abonnés</span>
-                    <span class="follow"><strong>{{ followingCount }}</strong> abonnements</span>
+                    <span class="follow" data-span-followers-id="{{ user.id }}"><strong>{{ followersCount }}</strong> abonnés</span>
+                    <span class="follow" data-span-following-id="{{ user.id }}"><strong>{{ followingCount }}</strong> abonnements</span>
                 </div>
             </div>
 
