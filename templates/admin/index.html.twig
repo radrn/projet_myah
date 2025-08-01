@@ -1,24 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}Myah{% endblock %}</title>
-    <link rel="icon"
-          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-    {% block stylesheets %}
-    {% endblock %}
+{% extends 'base.html.twig' %}
 
-    {% block javascripts %}
-        {% block importmap %}{{ importmap('app') }}{% endblock %}
-    {% endblock %}
-</head>
-<body>
-<div class="app-container">
-    {% block header %}
-        {% include 'partials/header.html.twig' %}
-    {% endblock %}
-    {% block body %}
-    {% endblock %}
-</div>
-</body>
-</html>
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block body %}
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+        <table class="admin-table">
+            <thead>
+            <tr>
+                <th>Section</th>
+                <th>View</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Posts</td>
+                <td><a href="{{ path('admin_list', {'type': 'post'}) }}">View all posts</a></td>
+            </tr>
+            <tr>
+                <td>Users</td>
+                <td><a href="{{ path('admin_list', {'type': 'user'}) }}">View all users</a></td>
+            </tr>
+            <tr>
+                <td>Comments</td>
+                <td><a href="{{ path('admin_list', {'type': 'comment'}) }}">View all comments</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

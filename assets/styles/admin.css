@@ -1,0 +1,150 @@
+.admin-container {
+    width: 75%;
+    max-width: 1000px;
+    min-height: 100vh;
+    background-color: rgba(177, 209, 227, 0.2);
+    padding: 30px;
+    border-right: 3px solid #ccc;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    font-family: "Nova Round", sans-serif;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.admin-container h1 {
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.admin-table thead {
+    background-color: #A3C8D9;
+    color: #333;
+    text-align: left;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+    font-size: 15px;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(177, 209, 227, 0.3);
+    cursor: pointer;
+}
+
+.admin-table a {
+    text-decoration: none;
+    color: #5a6e5a;
+    font-weight: bold;
+}
+
+.admin-table a:hover {
+    color: #a2aa7d;
+}
+
+/* Delete button styling */
+.admin-table .btn-delete {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    padding: 7px 14px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.admin-table .btn-delete:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .admin-container {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .admin-container h1 {
+        font-size: 22px;
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    gap: 4px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+}
+
+.pagination a,
+.pagination span {
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #444;
+    border: 1px solid #e0e0e0;
+    background-color: #fafafa;
+}
+
+.pagination a:hover {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.pagination .current {
+    background-color: #e5e5e5;
+    color: #222;
+    font-weight: 500;
+    cursor: default;
+    border: 1px solid #d5d5d5;
+}
+
+.pagination .disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.delete-btn {
+    background-color: #fbeaea;
+    color: #c0392b;
+    border: 1px solid #f5c6c6;
+    padding: 6px 12px;
+    font-size: 13px;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #f2dede;
+    color: #a1251b;
+    border-color: #e6b0b0;
+}
+
+.delete-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(192, 57, 43, 0.2);
+}

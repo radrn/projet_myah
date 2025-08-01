@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin List - {{ type|capitalize }}{% endblock %}
+
+{% block body %}
+    <div class="admin-container">
+        <h1>{{ type|capitalize }} List</h1>
+        <table class="admin-table">
+            <thead>
+            <tr>
+                {% if type == 'post' %}
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                {% elseif type == 'user' %}
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Actions</th>
+                {% elseif type == 'comment' %}
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Post</th>
+                    <th>Created At</th>
+                    <th>Actions</th>
+                {% endif %}
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    {% if type == 'post' %}
+                        <td>{{ item.contenu }}</td>
+                        <td>{{ item.user.username }}</td>
+                        <td>{{ item.createdAt ? item.createdAt|date('Y-m-d H:i') : 'N/A' }}</td>
+                    {% elseif type == 'user' %}
+                        <td>{{ item.username }}</td>
+                        <td>{{ item.email }}</td>
+                    {% elseif type == 'comment' %}
+                        <td>{{ item.contenu|length > 50 ? item.contenu[:50] ~ '...' : item.contenu }}</td>
+                        <td>{{ item.user.username }}</td>
+                        <td>{{ item.post.id }}</td>
+                        <td>{{ item.createdAt ? item.createdAt|date('Y-m-d H:i') : 'N/A' }}</td>
+                    {% endif %}
+                    <td>
+                        <form method="post" action="{{ path('admin_delete', {type: type, id: item.id}) }}"
+                              onsubmit="return confirm('Are you sure you want to delete this {{ type }}?');">
+                            <button class="delete-btn" type="submit">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">No {{ type }} found.</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <div class="pagination">
+            {{ knp_pagination_render(items) }}
+        </div>
+    </div>
+{% endblock %}
